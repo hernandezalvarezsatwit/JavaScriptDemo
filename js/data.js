@@ -26,6 +26,4 @@ const cart = [
             quantity: 2
       },      
 ];
-
-export { cart };
     
