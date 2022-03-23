@@ -15,17 +15,6 @@ function outputCartRow(item, total){
     createContent(row, item.product.price);
     createContent(row, total);
     tableBody.append(row);                                            //Add row to body
-
-    // document.write('<table border="1">');
-    // for (let i=0; i < 3; i++){
-    //     document.write('<tr>');
-    //
-    //     for (let j=0; j < 5; j++) {
-    //         document.write('<td>' + 'cell' + '</td>');
-    //     }
-    //     document.write('</tr>');
-    // }
-    // document.write('</table>');
 }
 
 
