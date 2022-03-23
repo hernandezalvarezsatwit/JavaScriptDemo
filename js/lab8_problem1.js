@@ -1,5 +1,5 @@
-const tax_rate = .10; //prompt('Enter tax rate (0.10)');
-const shipping_threshold = 1000; //prompt('Enter shipping threshold (1000)');
+const tax_rate = prompt('Enter tax rate (0.10)');
+const shipping_threshold = prompt('Enter shipping threshold (1000)');
 let tableBody;
 
 function loadTable(table){
