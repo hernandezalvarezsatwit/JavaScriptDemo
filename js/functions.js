@@ -3,9 +3,20 @@ function calculateTotal(quantity, price){
     return (quantity*price).toFixed(2);
 }
 
-function outputCartRow(item, total){
-    total.toFixed();
-    document.write(item.title + " " +item.price+ " "+item.filename);
+function outputCartRow(tableBody, item, total){
+    const row = document.createElement("tr");               //Create row
+    const img = document.createElement('img');              //Create image
+
+    img.src = "images/"+item.product.filename;                    //Add image
+    row.appendChild(img);
+
+    //Create title, quantity and price
+    createContent(row, item.product.title);
+    createContent(row, item.quantity);
+    createContent(row, item.product.price);
+    createContent(row, total);
+
+    tableBody.append(row);                                          //Add row to body
 }
 
 function createContent(row, text){

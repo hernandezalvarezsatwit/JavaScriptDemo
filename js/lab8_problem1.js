@@ -4,30 +4,19 @@ const shipping_threshold = 300; //prompt('Enter shipping threshold (1000)');
 
 function loadTable(table){
     const tableBody = table.querySelector("tbody");
-
-    //Clear table to use dynamic instead
-    tableBody.innerHTML = "<tr></tr>";
+    tableBody.innerHTML = "<tr></tr>";      //Clear table to use dynamic instead
+    let subtotal = 0;                       //Keep track of subtotal
 
     //Fill in rows
-    let subtotal = 0;
     for(let i = 0; i < 3; i++){
-        const row = document.createElement("tr");               //Create row
-        const img = document.createElement('img');              //Create image
-        img.src = "images/"+cart[i].product.filename;                    //Add image
-        row.appendChild(img);
 
-        //Create title, quantity and price
-        createContent(row, cart[i].product.title);
-        createContent(row, cart[i].quantity);
-        createContent(row, cart[i].product.price);
+        //Calculate amount for items
+        let amount = parseInt(calculateTotal(cart[i].quantity, cart[i].product.price));
+        subtotal += amount;
+        amount = moneyFormat(amount)
 
-        //Create total
-        let total = parseInt(calculateTotal(cart[i].quantity, cart[i].product.price));
-        subtotal += total;
-        total = moneyFormat(total)
-        createContent(row, total);
-
-        tableBody.append(row);                                          //Add row to body
+        //Create row
+        outputCartRow(tableBody, cart[i], amount);
     }
 
     //Calculate and show subtotal, tax, shipping and grand total
