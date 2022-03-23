@@ -1,5 +1,4 @@
 /* here is the array used for project 1 */
-
 const cart = [
       {
             product: {
