@@ -1,9 +1,10 @@
 const tax_rate = .10; //prompt('Enter tax rate (0.10)');
 const shipping_threshold = 300; //prompt('Enter shipping threshold (1000)');
+let tableBody;
 //TODO: activate prompt
 
 function loadTable(table){
-    const tableBody = table.querySelector("tbody");
+    tableBody = table.querySelector("tbody");
     tableBody.innerHTML = "<tr></tr>";      //Clear table to use dynamic instead
     let subtotal = 0;                       //Keep track of subtotal
 
@@ -16,7 +17,7 @@ function loadTable(table){
         amount = moneyFormat(amount)
 
         //Create row
-        outputCartRow(tableBody, cart[i], amount);
+        outputCartRow(cart[i], amount);
     }
 
     //Calculate and show subtotal, tax, shipping and grand total
