@@ -52,9 +52,7 @@ function addRow(tbody, classType, span, text, quantity, bold){
     const cell1 = document.createElement("td");
     cell1.textContent = moneyFormat(quantity);
     row.appendChild(cell1);
-    if(bold){
-        cell1.classList.add("focus");
-    }
+    bold ? cell1.classList.add("focus"): "";
     tbody.append(row);
 }
 
