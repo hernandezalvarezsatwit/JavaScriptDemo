@@ -6,8 +6,7 @@ function calculateTotal(quantity, price){
 function outputCartRow(tableBody, item, total){
     const row = document.createElement("tr");               //Create row
     const img = document.createElement('img');              //Create image
-
-    img.src = "images/"+item.product.filename;                    //Add image
+    img.src = "images/"+item.product.filename;                       //Add image
     row.appendChild(img);
 
     //Create title, quantity and price
@@ -16,7 +15,7 @@ function outputCartRow(tableBody, item, total){
     createContent(row, item.product.price);
     createContent(row, total);
 
-    tableBody.append(row);                                          //Add row to body
+    tableBody.append(row);                                            //Add row to body
 }
 
 function createContent(row, text){
@@ -27,7 +26,7 @@ function createContent(row, text){
 
 function addRow(tbody, classType, span, text, quantity, bold){
     const row = document.createElement("tr");
-    row.classList.add(classType);
+    //row.classList.add(classType);
     const cell = document.createElement("td");
     cell.textContent = text;
     cell.colSpan = span;
