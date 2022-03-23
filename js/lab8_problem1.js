@@ -1,5 +1,5 @@
-const tax_rate = prompt('Enter tax rate (0.10)');
-const shipping_threshold = prompt('Enter shipping threshold (1000)');
+const tax_rate = .2; //prompt('Enter tax rate (0.10)');
+const shipping_threshold = 0; //prompt('Enter shipping threshold (1000)');
 let tableBody;
 
 function loadTable(table){
@@ -7,8 +7,8 @@ function loadTable(table){
     tableBody.innerHTML = "<tr></tr>";      //Clear table to use dynamic instead
     let subtotal = 0;                       //Keep track of subtotal
 
-    //Fill in rows
-    for(let i = 0; i < 3; i++){
+    //Fill in rows. I am creating instead of editing so that it can handle more rows.
+    for(let i = 0; i < cart.length; i++){
 
         //Calculate amount for items
         let amount = parseInt(calculateTotal(cart[i].quantity, cart[i].product.price));
@@ -27,5 +27,4 @@ function loadTable(table){
     addRow(tableBody,"totals", 4, "Shipping", shipping, false);                     //Show shipping
     addRow(tableBody,"totals", 4, "Grand Total", subtotal+tax+shipping, true); //GrandTotal
 }
-
 loadTable(document.querySelector("table.table-fill"));
