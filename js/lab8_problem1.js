@@ -1,7 +1,6 @@
-const tax_rate = .10; //prompt('Enter tax rate (0.10)');
-const shipping_threshold = 300; //prompt('Enter shipping threshold (1000)');
+const tax_rate = prompt('Enter tax rate (0.10)');
+const shipping_threshold = prompt('Enter shipping threshold (1000)');
 let tableBody;
-//TODO: activate prompt
 
 function loadTable(table){
     tableBody = table.querySelector("tbody");
