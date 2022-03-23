@@ -14,9 +14,20 @@ function outputCartRow(item, total){
     createContent(row, item.quantity);
     createContent(row, item.product.price);
     createContent(row, total);
-
     tableBody.append(row);                                            //Add row to body
+
+    // document.write('<table border="1">');
+    // for (let i=0; i < 3; i++){
+    //     document.write('<tr>');
+    //
+    //     for (let j=0; j < 5; j++) {
+    //         document.write('<td>' + 'cell' + '</td>');
+    //     }
+    //     document.write('</tr>');
+    // }
+    // document.write('</table>');
 }
+
 
 function createContent(row, text){
     const celElement = document.createElement("td");
@@ -26,7 +37,7 @@ function createContent(row, text){
 
 function addRow(tbody, classType, span, text, quantity, bold){
     const row = document.createElement("tr");
-    //row.classList.add(classType);
+    row.classList.add(classType);
     const cell = document.createElement("td");
     cell.textContent = text;
     cell.colSpan = span;
