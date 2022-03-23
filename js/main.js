@@ -7,23 +7,23 @@ function loadTable(table){
     //Fill in rows
     let subtotal = 0;
     for(let i = 0; i < 3; i++){
-        const row = document.createElement("tr");
-
-        const img = document.createElement('img');
-        img.src = "images/"+cart[i].product.filename;
+        const row = document.createElement("tr");               //Create row
+        const img = document.createElement('img');              //Create image
+        img.src = "images/"+cart[i].product.filename;                    //Add image
         row.appendChild(img);
 
+        //Create title, quantity and price
         createContent(row, cart[i].product.title);
         createContent(row, cart[i].quantity);
         createContent(row, cart[i].product.price);
-        //createContent(row, cart[i].product.title);
 
+        //Create total
         let total = parseInt(calculateTotal(cart[i].quantity, cart[i].product.price));
-        subtotal += parseInt(total);
+        subtotal += total;
         total = moneyFormat(total)
         createContent(row, total);
 
-        tableBody.append(row);
+        tableBody.append(row);                                          //Add row to body
     }
 
     //Calculate and show subtotal, tax, shipping and grand total
@@ -40,7 +40,6 @@ function createContent(row, text){
     celElement.textContent = text;
     row.appendChild(celElement);
 }
-
 
 function addRow(tbody, classType, span, text, quantity, bold){
     const row = document.createElement("tr");
