@@ -35,10 +35,3 @@ function updateTotalsRow(tableRow, amount) {
 function moneyFormat(number){
     return '$'+(number.toFixed(2));
 }
-
-
-
-
-
-
-        
